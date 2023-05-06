@@ -52,7 +52,30 @@ Python3 chcekup
 
 # Step 1 :  How to create Python Monitoring Application using Flask from scratch
 
-    Please use below code
+C:\Users\Dell\AppData\Local\Programs\Python\Python38-32\python.exe -m pip install psutil 
+
+C:\Users\Dell\AppData\Local\Programs\Python\Python38-32\python.exe -m pip install flask
+
+ py app.py
+
+Please use below code
+	import psutil
+	from flask import Flask, render_template
+
+	app = Flask(__name__)
+
+	@app.route("/")
+	def index():
+ 		cpu_metric = psutil.cpu_percent()
+   		mem_metric = psutil.virtual_memory().percent
+		Message = None
+		if cpu_metric > 80 or mem_metric > 80:
+       	 		Message = "High CPU or Memory Detected, scale up!!!"
+   		return render_template("index.html", cpu_metric=cpu_metric, mem_metric=mem_metric, message=Message)
+
+	if __name__=='__main__':
+   		app.run(debug=True, host = '0.0.0.0')    	
+
       
       
   

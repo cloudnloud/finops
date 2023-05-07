@@ -213,21 +213,21 @@ requirements.txt
 
 	docker build -t montor-image .
 	
-![Watch the image](/aws/monitor-aws/3.png)
+![Watch the image](/aws/monitor-aws/3.PNG)
 
 𝐒𝐭𝐞𝐩 𝟔 : 𝐑𝐮𝐧 𝐭𝐡𝐞 𝐃𝐨𝐜𝐤𝐞𝐫 𝐚𝐧𝐝 𝐯𝐚𝐥𝐢𝐝𝐚𝐭𝐞
 
-![Watch the image](/aws/monitor-aws/4.png)
+![Watch the image](/aws/monitor-aws/4.PNG)
 
 	docker run -p 5000:5000 montor-image
 	
 𝐒𝐭𝐞𝐩 𝟕 : 𝐂𝐫𝐞𝐚𝐭𝐞 𝐭𝐡𝐞 𝐄𝐂𝐑 𝐫𝐞𝐩𝐨 𝐚𝐧𝐝 𝐏𝐮𝐬𝐡 𝐭𝐡𝐞 𝐈𝐦𝐚𝐠𝐞
 
-![Watch the image](/aws/monitor-aws/5.png)
+![Watch the image](/aws/monitor-aws/5.PNG)
 
 Then follow the instructure
 
-![Watch the image](/aws/monitor-aws/6.png)
+![Watch the image](/aws/monitor-aws/6.PNG)
 
 
 𝐒𝐭𝐞𝐩 𝟖 : 𝐏𝐫𝐞𝐩𝐚𝐫𝐞 𝐭𝐡𝐞 𝐤𝐮𝐛𝐞𝐫𝐧𝐞𝐭𝐞𝐬 𝐄𝐧𝐯𝐢𝐨𝐧𝐦𝐞𝐧𝐭
@@ -236,7 +236,7 @@ Follow the attached document
 
 Open the all port on both master and node before enter the joint command
 
-![Watch the image](/aws/monitor-aws/7.png)
+![Watch the image](/aws/monitor-aws/7.PNG)
 
 𝐒𝐭𝐞𝐩 𝟗 : 𝐇𝐨𝐰  𝐭𝐨 𝐜𝐫𝐞𝐚𝐭𝐞 𝐊𝐮𝐛𝐞𝐫𝐧𝐞𝐭𝐞𝐬 𝐃𝐞𝐩𝐥𝐨𝐲𝐦𝐞𝐧𝐭𝐬 𝐚𝐧𝐝 𝐬𝐞𝐫𝐯𝐢𝐜𝐞 
 
@@ -278,7 +278,7 @@ root@ip-172-31-84-83:~/files# more 𝐬𝐞𝐫.𝐲𝐚𝐦𝐥
 		    - port: 5000
 		      targetPort: 5000
 
-![Watch the image](/aws/monitor-aws/8.png)
+![Watch the image](/aws/monitor-aws/8.PNG)
 
 𝐒𝐭𝐞𝐩 𝟏𝟎 : 𝐀𝐜𝐜𝐞𝐬𝐬 𝐭𝐡𝐞 𝐚𝐩𝐩𝐥𝐢𝐜𝐚𝐭𝐢𝐨𝐧 𝐟𝐫𝐨𝐦 𝐢𝐧𝐭𝐞𝐫𝐧𝐞𝐭
 
@@ -286,6 +286,6 @@ Take master ip or server ip with nodeport  number
 
 ex: http://34.201.50.33:32340/
 
-![Watch the image](/aws/monitor-aws/9.png)
+![Watch the image](/aws/monitor-aws/9.PNG)
 
   

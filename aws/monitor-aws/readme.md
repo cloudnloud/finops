@@ -243,41 +243,41 @@ Open the all port on both master and node before enter the joint command
 Deployment :
 
 root@ip-172-31-84-83:~/files# more 𝐝𝐞𝐩.𝐲𝐚𝐦𝐥
-		apiVersion: apps/v1
-		kind: Deployment
-		metadata:
-		  name: monitor-python
-		  labels:
-		    app: monitor
-		spec:
-		  replicas: 1
-		  selector:
-		    matchLabels:
-		      app: monitor
-		  template:
-		    metadata:
-		      labels:
-			app: monitor
-		    spec:
-		      containers:
-		      - name: monitor
-			image: 261995165444.dkr.ecr.us-east-1.amazonaws.com/my_monitoring_app_image:latest
-			ports:
-			- containerPort: 5000
+	apiVersion: apps/v1
+	kind: Deployment
+	metadata:
+	  name: monitor-python
+	  labels:
+	    app: monitor
+	spec:
+	  replicas: 1
+	  selector:
+	    matchLabels:
+	      app: monitor
+	  template:
+	    metadata:
+	      labels:
+		app: monitor
+	    spec:
+	      containers:
+	      - name: monitor
+		image: 261995165444.dkr.ecr.us-east-1.amazonaws.com/my_monitoring_app_image:latest
+		ports:
+		- containerPort: 5000																								
 root@ip-172-31-84-83:~/files# more 𝐬𝐞𝐫.𝐲𝐚𝐦𝐥
-		apiVersion: v1
-		kind: Service
-		metadata:
-		  name: python-service
-		spec:
-		  type: NodePort
-		  selector:
-		    app: monitor
-		  ports:
-		      # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
-		    - port: 5000
-		      targetPort: 5000
-
+	apiVersion: v1
+	kind: Service
+	metadata:
+	  name: python-service
+	spec:
+	  type: NodePort
+	  selector:
+	    app: monitor
+	  ports:
+	      # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
+	    - port: 5000
+	      targetPort: 5000
+																							
 ![Watch the image](/aws/monitor-aws/8.PNG)
 
 𝐒𝐭𝐞𝐩 𝟏𝟎 : 𝐀𝐜𝐜𝐞𝐬𝐬 𝐭𝐡𝐞 𝐚𝐩𝐩𝐥𝐢𝐜𝐚𝐭𝐢𝐨𝐧 𝐟𝐫𝐨𝐦 𝐢𝐧𝐭𝐞𝐫𝐧𝐞𝐭

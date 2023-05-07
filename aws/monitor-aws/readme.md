@@ -242,7 +242,6 @@ Open the all port on both master and node before enter the joint command
 
 Deployment :
 
-root@ip-172-31-84-83:~/files# more 𝐝𝐞𝐩.𝐲𝐚𝐦𝐥
 	apiVersion: apps/v1
 	kind: Deployment
 	metadata:
@@ -263,8 +262,10 @@ root@ip-172-31-84-83:~/files# more 𝐝𝐞𝐩.𝐲𝐚𝐦𝐥
 	      - name: monitor
 		image: 261995165444.dkr.ecr.us-east-1.amazonaws.com/my_monitoring_app_image:latest
 		ports:
-		- containerPort: 5000																								
-root@ip-172-31-84-83:~/files# more 𝐬𝐞𝐫.𝐲𝐚𝐦𝐥
+		- containerPort: 5000
+	
+service.yaml
+
 	apiVersion: v1
 	kind: Service
 	metadata:
@@ -277,6 +278,8 @@ root@ip-172-31-84-83:~/files# more 𝐬𝐞𝐫.𝐲𝐚𝐦𝐥
 	      # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
 	    - port: 5000
 	      targetPort: 5000
+      
+																							
 																							
 ![Watch the image](/aws/monitor-aws/8.PNG)
 

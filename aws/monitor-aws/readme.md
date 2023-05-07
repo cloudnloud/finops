@@ -159,12 +159,12 @@ Please use below code
 	</body>
 	</html>
 	
-![Watch the image](/aws/monitor-aws/1.0.png)
+![Watch the image](/aws/monitor-aws/1.0.PNG)
 	
 # 𝐒𝐭𝐞𝐩 𝟐 : 𝐇𝐨𝐰 𝐭𝐨 𝐫𝐮𝐧 𝐭𝐡𝐞 𝐏𝐲𝐭𝐡𝐨𝐧 𝐚𝐩𝐩𝐥𝐢𝐜𝐚𝐭𝐢𝐨𝐧 𝐥𝐨𝐜𝐚𝐥𝐡𝐨𝐬𝐭 𝐰𝐢𝐭𝐡 𝐩𝐨𝐫𝐭
 	
 	py app.py
-![Watch the image](/aws/monitor-aws/1.png)
+![Watch the image](/aws/monitor-aws/1.PNG)
 
 𝐒𝐭𝐞𝐩 𝟑 : 𝐇𝐨𝐰 𝐭𝐨 𝐜𝐨𝐧𝐭𝐚𝐢𝐧𝐞𝐫𝐢𝐳𝐞 𝐭𝐡𝐞 𝐚𝐩𝐩𝐥𝐢𝐜𝐚𝐭𝐢𝐨𝐧 𝐮𝐬𝐢𝐧𝐠 𝐃𝐨𝐜𝐤𝐞𝐫
 
@@ -207,10 +207,10 @@ requirements.txt
 
 𝐅𝐨𝐥𝐝𝐞𝐫 𝐒𝐭𝐫𝐮𝐭𝐮𝐫𝐞
 
-![Watch the image](/aws/monitor-aws/2.png)
+![Watch the image](/aws/monitor-aws/2.PNG)
 
 𝐒𝐭𝐞𝐩 𝟓 : 𝐇𝐨𝐰 𝐭𝐨 𝐛𝐮𝐢𝐥𝐝 𝐃𝐨𝐜𝐤𝐞𝐫 𝐢𝐦𝐚𝐠𝐞 𝐟𝐫𝐨𝐦 𝐃𝐨𝐜𝐤𝐞𝐫𝐟𝐢𝐥𝐞
-	
+
 	docker build -t montor-image .
 	
 ![Watch the image](/aws/monitor-aws/3.png)

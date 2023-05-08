@@ -9,7 +9,7 @@ Application Deployment, also known as Software Deployment, is the process of ins
 This Devops project and add it to your Resume, in this realtime devops project we will devops tools like AWS, Python, Docker, Kubernetes and more.
 
 # 𝐀𝐫𝐜𝐡𝐢𝐭𝐞𝐜𝐭𝐮𝐫𝐞
-![Watch the image](/aws/monitor-aws/cloudapp.png)
+![Watch the image](/aws/monitor-aws/cloudapp1.png)
 
 # 𝐏𝐫𝐞𝐫𝐞𝐪𝐮𝐢𝐬𝐢𝐭𝐞𝐬
   - AWS Account

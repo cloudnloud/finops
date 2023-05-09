@@ -1,3 +1,7 @@
+# 𝐀𝐫𝐜𝐡𝐢𝐭𝐞𝐜𝐭𝐮𝐫𝐞
+![Watch the image](/aws/efk-kuber/EFK-Usecase.PNG)
+
+
 # Steps
 # Step 1: Create kubernets environment using of kuber_install document
   open the all ports both node level and master level

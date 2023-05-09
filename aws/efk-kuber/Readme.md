@@ -24,3 +24,6 @@
     kubectl run nginx --image=nginx 
     it will get the error bez 8080 already listing ( If you check the logs it will displayed)
     kubectl run nginx1 --image=nginx --port=8082 ( now it wil run just chcek dashboard logs)
+
+63,64,65
+Ref: https://tcsglobal.udemy.com/course/production-ready-kubernetes-setup-for-cicd-devops-project/learn/lecture/30318392#reviews

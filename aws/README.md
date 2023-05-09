@@ -18,5 +18,5 @@ UseCase 5 | [UseCase 5](/aws/Usecase5/Readme.md) | **Deployment - Kubernetes** |
 UseCase 6 | [UseCase 6](/aws/Usecase6/Readme.md) | **Integration - AWS Pipeline** | AWS codecommit, AWS Pipeline and S3
 UseCase 7 | [UseCase 7](/aws/Usecase7/Readme.md) | **Integration** | AWS codecommit, AWS codedeploy,S3 Attach and Ec2
 UseCase 8 | [UseCase 8](/aws/Usecase8/Readme.md) | **Deployment** | Different Tyeps of deployment
-UseCase 9 | [UseCase 9](/aws//Readme.md) | **Deployment-Integration- Kubernetes** | Different Tyeps of deployment
+UseCase 9 | [UseCase 9](/aws//Readme.md) | **Deployment-Integration- Kubernetes** |  Monitor and deploy the application
 

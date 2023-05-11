@@ -14,5 +14,11 @@
 
 # Step6 :  Open Jenkins GUI and  configuration sonarqube,maven and ssh 
       
-      
-            
+      # Sonarqube ,SSH
+          1. Manage Jenkins --> Manage Plugns --> Install ( sonarqube , publish ssh ) plugin 
+          2. Manage Jenkins --> configure system --> SonarQube installations --> ADD ( Name , URL, Credential)
+          
+                                                  --> publish overssh --> add ( Name,Hostname(serverIP),Username,credentail)
+                                                  
+  
+        

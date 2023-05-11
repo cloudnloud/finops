@@ -13,12 +13,60 @@
     https://github.com/sree1786/jenkins_install/blob/master/Tomcat%20installtion
 
 # Step6 :  Open Jenkins GUI and  configuration sonarqube,maven and ssh 
-      
+       
+      # add credentials 
+        
+           Manage Jenkins --> credentails --> click on Domain -->Add  credential -->  
+           
+           a. #Sonar#:
+              Go to sonar gui --> Click on my account --> Security --> give token name --> genderate token and save
+              In credentail --> select Kind as --> Secret Text --> Secret name( copy and paste sonar token) --> ID sona_cren --> description Sonar_cren
+            b. #TomcatSSH#
+                Go to tomcat server 
+                useradd sreeadmin
+                passwd sreeadmin
+                newpassword *****
+                 confirmagain *****
+                
+                go to /etc/ssh/sshd_config
+                PermitRootLogin yes
+                 PasswordAuthentication yes
+                 
+                 visudo 
+                 sreeadmin ALL=(ALL)       NOPASSWD: ALL
+                 
+                 restart the server 
+               
+               su - sreeadmin 
+                ssh-keygen
+               
+               exchange keys between jenkins server( root user) to tomcat server( sreeadmin)
+               
+                go to jenkins server --> ssh-copy-id -i ~/.ssh/id_rsa.pub sreeadmin@host ( finally comunication need to happen with out password from jenkins to tomcat)
+                Go  to Jenkins server --> open id_rsa
+                
+                In credentail --> select Kind as --> ssh username with privatekey -->ID (name), Username (sreeadmin) -- select priatekey --> add (id_rsa info)  --> crete 
+                
+         Ref: https://www.youtube.com/watch?v=qJ8gUp0O25k      
+                
+            c.#Nexus#
+              Kind --> username & password --> username admin --> password (what password you given mostly admin)
+     
       # Sonarqube ,SSH
           1. Manage Jenkins --> Manage Plugns --> Install ( sonarqube , publish ssh ) plugin 
           2. Manage Jenkins --> configure system --> SonarQube installations --> ADD ( Name , URL, Credential)
           
-                                                  --> publish overssh --> add ( Name,Hostname(serverIP),Username,credentail)
-                                                  
+          ![Watch the image](/aws/efk-kuber/sonar.PNG)
+          
+              Manage Jenkins --> configure system --> publish overssh --> add ( Name,Hostname(serverIP),Username,credentail)
+              
+          ![Watch the image](/aws/efk-kuber/ssh1.PNG)
+       
+       # Maven info update
+         3. Manage Jenkins --> Global Tool Configuration --> Maven
+         
+         ![Watch the image](/aws/efk-kuber/maven1.PNG)
+         
+        
   
         

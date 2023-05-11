@@ -195,7 +195,7 @@
         stage('artifacts-nexus'){
             nexusArtifactUploader artifacts: [[artifactId: '01-maven-web-app', classifier: '', file: 'target/01-maven-web-app.war', type: 'war']], credentialsId: 'nexus', groupId: 'sreegroup', nexusUrl: '52.91.170.16:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'sree-snapshot-Repo', version: '1.0-SNAPSHOT'
 
+          }
+
+
         }
-
-
-      }

@@ -71,39 +71,41 @@
     
     New item --> Pipeline(name :newbuild ) -->  go to pipeline 
     
-        node{
-    
-    stage('clone rep'){
-        git 'https://github.com/sree1786/maven-web-app.git'
-        
-    }
-    
-    stage('Maven Build'){
-        def mavenHome = tool name: "Maven-3.8.6", type:"maven"
-        def mavenCMD = "${mavenHome}/bin/mvn"
-        sh "${mavenCMD} clean package"
-    }
-    
-    stage('sonarscan'){
-        withSonarQubeEnv('sonarqube'){
-            def mavenHome = tool name: "Maven-3.8.6", type:"maven"
-            def mavenCMD = "${mavenHome}/bin/mvn"
-            sh "${mavenCMD} sonar:sonar"
-            
-            
-            
-        }
-        
-    }
-    stage('artifacts-nexus'){
-        nexusArtifactUploader artifacts: [[artifactId: '01-maven-web-app', classifier: '', file: 'target/01-maven-web-app.war', type: 'war']], credentialsId: 'nexus', groupId: 'sreegroup', nexusUrl: '52.91.170.16:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'sree-snapshot-Repo', version: '1.0-SNAPSHOT'
-        
-    }
-    
-    sshagent(['tomcat-key']) {
-        sh 'scp -o StrictHostKeyChecking=no target/01-maven-web-app.war sreeadmin@52.70.144.165:/opt/tomcat1/apache-tomcat-9.0.74/webapps'
+              node{
+
+          stage('clone rep'){
+              git 'https://github.com/sree1786/maven-web-app.git'
+
+          }
+
+          stage('Maven Build'){
+              def mavenHome = tool name: "Maven-3.8.6", type:"maven"
+              def mavenCMD = "${mavenHome}/bin/mvn"
+              sh "${mavenCMD} clean package"
+          }
+
+          stage('sonarscan'){
+              withSonarQubeEnv('sonarqube'){
+                  def mavenHome = tool name: "Maven-3.8.6", type:"maven"
+                  def mavenCMD = "${mavenHome}/bin/mvn"
+                  sh "${mavenCMD} sonar:sonar"
+
+
+
+              }
+
+          }
+          stage('artifacts-nexus'){
+              nexusArtifactUploader artifacts: [[artifactId: '01-maven-web-app', classifier: '', file: 'target/01-maven-web-app.war', type: 'war']], credentialsId: 'nexus', groupId: 'sreegroup', nexusUrl: '52.91.170.16:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'sree-snapshot-Repo', version: '1.0-SNAPSHOT'
+
+          }
+
+          stage('Final-deploy'){
+              sshagent(['tomcat-key']) {
+                  sh 'scp -o StrictHostKeyChecking=no target/01-maven-web-app.war sreeadmin@52.70.144.165:/opt/tomcat1/apache-tomcat-9.0.74/webapps'
+           }
+          }
       }
-    }
    
  
  Try  one after another in node pipe and keep on test like below

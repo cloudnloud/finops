@@ -165,3 +165,37 @@
             }
 
         }
+
+4. Git + Maven + sonar + artifactory
+
+        node{
+
+        stage('clone rep'){
+            git 'https://github.com/sree1786/maven-web-app.git'
+
+        }
+
+        stage('Maven Build'){
+            def mavenHome = tool name: "Maven-3.8.6", type:"maven"
+            def mavenCMD = "${mavenHome}/bin/mvn"
+            sh "${mavenCMD} clean package"
+        }
+
+        stage('sonarscan'){
+            withSonarQubeEnv('sonarqube'){
+                def mavenHome = tool name: "Maven-3.8.6", type:"maven"
+                def mavenCMD = "${mavenHome}/bin/mvn"
+                sh "${mavenCMD} sonar:sonar"
+
+
+
+            }
+
+        }
+        stage('artifacts-nexus'){
+            nexusArtifactUploader artifacts: [[artifactId: '01-maven-web-app', classifier: '', file: 'target/01-maven-web-app.war', type: 'war']], credentialsId: 'nexus', groupId: 'sreegroup', nexusUrl: '52.91.170.16:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'sree-snapshot-Repo', version: '1.0-SNAPSHOT'
+
+        }
+
+
+    }

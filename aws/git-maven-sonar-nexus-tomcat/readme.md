@@ -107,11 +107,36 @@
    
  
  Try  one after another in node pipe and keep on test like below
+ 1. Git
  
- node {
- 
-  stage('1'){
-  }
+        node{
+   
+          stage('clone rep'){
+   
+            git 'https://github.com/sree1786/maven-web-app.git'
+    
+          }
+        }
+    
+ 2. Git + Maven 
   
- }
+        node{
+      
+          stage('clone rep'){
+        
+            git 'https://github.com/sree1786/maven-web-app.git'
+          
+            }
+          
+          stage('Maven Build'){
+        
+            def mavenHome = tool name: "Maven-3.8.6", type:"maven"
+          
+            def mavenCMD = "${mavenHome}/bin/mvn"
+          
+            sh "${mavenCMD} clean package"
+          
+          }
+        
+        }
  

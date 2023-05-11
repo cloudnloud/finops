@@ -56,16 +56,16 @@
           1. Manage Jenkins --> Manage Plugns --> Install ( sonarqube , publish ssh ) plugin 
           2. Manage Jenkins --> configure system --> SonarQube installations --> ADD ( Name , URL, Credential)
           
-          ![Watch the image](/aws/efk-kuber/sonar.PNG)
+  ![Watch the image](/aws/git-maven-sonar-nexus-tomcat/sonar.PNG)
           
               Manage Jenkins --> configure system --> publish overssh --> add ( Name,Hostname(serverIP),Username,credentail)
               
-          ![Watch the image](/aws/efk-kuber/ssh1.PNG)
+  ![Watch the image](/aws/git-maven-sonar-nexus-tomcat/ssh1.PNG)
        
        # Maven info update
          3. Manage Jenkins --> Global Tool Configuration --> Maven
-         
-         ![Watch the image](/aws/efk-kuber/maven1.PNG)
+        
+  ![Watch the image](/aws/git-maven-sonar-nexus-tomcat/maven1.PNG)
          
   # Step 7: Create Pipeline job 
     
@@ -199,3 +199,12 @@
 
 
         }
+
+
+![Watch the image](/aws/git-maven-sonar-nexus-tomcat/nexus1.PNG)
+
+![Watch the image](/aws/git-maven-sonar-nexus-tomcat/nexus2.PNG)
+
+![Watch the image](/aws/git-maven-sonar-nexus-tomcat/nexus3.PNG)
+
+![Watch the image](/aws/git-maven-sonar-nexus-tomcat/nexus4.PNG)

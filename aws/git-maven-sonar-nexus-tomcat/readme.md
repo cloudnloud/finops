@@ -139,4 +139,29 @@
           }
         
         }
+ 3. Git + Maven + sonar
  
+ 
+        
+        node{
+
+          stage('clone rep'){
+
+              git 'https://github.com/sree1786/maven-web-app.git'
+
+              }
+          stage('Maven Build'){
+              def mavenHome = tool name: "Maven-3.8.6", type:"maven"
+              def mavenCMD = "${mavenHome}/bin/mvn"
+              sh "${mavenCMD} clean package"
+             }
+          stage('sonarscan'){
+                withSonarQubeEnv('sonarqube'){
+                      def mavenHome = tool name: "Maven-3.8.6", type:"maven"
+                      def mavenCMD = "${mavenHome}/bin/mvn"
+                      sh "${mavenCMD} sonar:sonar"
+                  }
+        
+            }
+
+        }

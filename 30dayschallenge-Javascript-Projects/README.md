@@ -42,7 +42,7 @@ Linux,Cloud,DevOps,Docker,K8s,Seccurity,Solutions,Re-Engineering,Virtuvalization
 Project.No | Project Name | Description | level
 :------|:------|:------|:------|
 [Project 1 - Digital Clock](/30dayschallenge-Javascript-Projects/Project1-DigitalClock) | **DigitalClock** | Display a digital clock | Easy
-
+[Project2 - Copy to Clipboard](/30dayschallenge-Javascript-Projects/Project2-Copy-to-Clipboard) | **Copy To ClipBoard** | Copy to ClipBoard | Easy
 
 # Ask all your queries
 

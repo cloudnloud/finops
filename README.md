@@ -34,6 +34,25 @@ We collate the information in this repository through students submissions , if 
 <!-- prettier-ignore-end -->
 <!-- ALL-TOPICS-LIST:END -->
 
+## Tech usecases Challange
+
+<!-- ALL-TOPICS-LIST:START -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<center>
+<table>
+  <tr>
+    <td align="center"><a href="/30dayschallenge-Javascript-Projects/README.md"><img src="images/javascript.jpeg" width="70px;" height="75px;" alt="JavaScript" /><br /><b>JavaScript</b></a></td>
+    
+  </tr>
+</table>
+</center>
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-TOPICS-LIST:END -->
+
+
+
 [![Watch the video](./images/youtube-trainings.png)](https://www.youtube.com/channel/cloudnloud)
 
 <h3 align="left">Connect with Me:</h3>

@@ -40,7 +40,7 @@ Linux,Cloud,DevOps,Docker,K8s,Seccurity,Solutions,Re-Engineering,Virtuvalization
 # 30DaysChallenge-Javascript-Projects
 
 Project.No | Project Name | Description | level
-:------|:------|:------|:------|:------|
+:------|:------|:------|:------|
 [Project 1 - Digital Clock](/Project1-DigitalClock) | **DigitalClock** | Easy
 
 

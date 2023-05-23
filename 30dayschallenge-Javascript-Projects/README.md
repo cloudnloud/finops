@@ -41,7 +41,7 @@ Linux,Cloud,DevOps,Docker,K8s,Seccurity,Solutions,Re-Engineering,Virtuvalization
 
 Project.No | Project Name | Description | level
 :------|:------|:------|:------|
-[Project 1 - Digital Clock](/Project1-DigitalClock) | **DigitalClock** | Easy
+[Project 1 - Digital Clock](/30dayschallenge-Javascript-Projects/Project1-DigitalClock) | **DigitalClock** | Display a digital clock | Easy
 
 
 # Ask all your queries

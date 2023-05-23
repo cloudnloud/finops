@@ -1,0 +1,170 @@
+install monitor app in ubuntu
+
+I .Install Docker
+
+	1. sudo apt update
+    2  sudo apt install apt-transport-https ca-certificates curl software-properties-common
+    3  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    4  sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+    5  apt-cache policy docker-ce
+    6  sudo apt install docker-ce
+    7  sudo systemctl status docker
+    8  docker images
+	
+II. Install pip3	
+	
+    9  sudo apt install python3-pip
+   10  pip3 --version
+   11  sudo apt install python3-venv
+   12  mkdir flask_app && cd flask_app
+   13  python3 -m venv venv
+   14  source venv/bin/activate
+   15  pip install Flask
+   16  python -m flask --version
+   17  sudo apt-get update -y
+   18  sudo apt-get install -y python3-psutil
+   19  python -m pip --version
+   20. pip install --upgrade pip
+   
+III.  Docker image build 
+
+   21  mkdir /opt/dockerimage
+   22. cd /opt/dockerimage
+   23  vi app.py
+import psutil
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    cpu_metric = psutil.cpu_percent()
+    mem_metric = psutil.virtual_memory().percent
+    Message = None
+    if cpu_metric > 80 or mem_metric > 80:
+        Message = "High CPU or Memory Detected, scale up!!!"
+    return render_template("index.html", cpu_metric=cpu_metric, mem_metric=mem_metric, message=Message)
+
+if __name__=='__main__':
+    app.run(debug=True, host = '0.0.0.0')
+
+   24  mkdir templates
+   25  cd templates/
+   26  vi index.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>System Monitoring</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        .plotly-graph-div {
+            margin: auto;
+            width: 50%;
+            background-color: rgba(151, 128, 128, 0.688);
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>System Monitoring</h1>
+        <div id="cpu-gauge"></div>
+        <div id="mem-gauge"></div>
+        {% if message %}
+        <div class="alert alert-danger">{{ message }}</div>
+        {% endif %}
+    </div>
+    <script>
+        var cpuGauge = {
+            type: "indicator",
+            mode: "gauge+number",
+            value: {{ cpu_metric }},
+            gauge: {
+                axis: { range: [null, 100] },
+                bar: { color: "#1f77b4" },
+                bgcolor: "white",
+                borderwidth: 2,
+                bordercolor: "#ccc",
+                steps: [
+                    { range: [0, 50], color: "#d9f0a3" },
+                    { range: [50, 85], color: "#ffeb84" },
+                    { range: [85, 100], color: "#ff5f5f" }
+                ],
+                threshold: {
+                    line: { color: "red", width: 4 },
+                    thickness: 0.75,
+                    value: {{ cpu_metric }}
+                }
+            }
+        };
+
+        var memGauge = {
+            type: "indicator",
+            mode: "gauge+number",
+            value: {{ mem_metric }},
+            gauge: {
+                axis: { range: [null, 100] },
+                bar: { color: "#1f77b4" },
+                bgcolor: "white",
+                borderwidth: 2,
+                bordercolor: "#ccc",
+                steps: [
+                    { range: [0, 50], color: "#d9f0a3" },
+                    { range: [50, 85], color: "#ffeb84" },
+                    { range: [85, 100], color: "#ff5f5f" }
+                ],
+                threshold: {
+                    line: { color: "red", width: 4 },
+                    thickness: 0.75,
+                    value: {{ mem_metric }}
+                }
+            }
+        };
+
+        var cpuGaugeLayout = { title: "CPU Utilization" };
+        var memGaugeLayout = { title: "Memory Utilization" };
+
+        Plotly.newPlot('cpu-gauge', [cpuGauge], cpuGaugeLayout);
+        Plotly.newPlot('mem-gauge', [memGauge], memGaugeLayout);
+    </script>
+</body>
+</html>
+
+
+   27  vi requirements.txt
+   
+Flask==2.3.2
+MarkupSafe==2.1.2
+Werkzeug==2.3.3
+itsdangerous==2.1.2
+psutil==5.8.0
+plotly==5.5.0
+tenacity==8.0.1
+boto3==1.9.148
+kubernetes==10.0.1
+   
+   28  vi Dockerfile
+   
+FROM python:3.9-buster
+
+WORKDIR /app
+
+COPY requirements.txt .
+
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+ENV FLASK_RUN_HOST=0.0.0.0
+
+EXPOSE 5000
+
+CMD ["flask", "run"]
+
+III. Build the images
+
+   29  docker build -t image-new .
+   30  python -m flask --version
+   31  python -m pip --version
+   32  docker run -p 5000:5000 montor-image .
+  

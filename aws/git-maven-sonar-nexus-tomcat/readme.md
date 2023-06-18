@@ -205,8 +205,12 @@
 
 ![Watch the image](/aws/git-maven-sonar-nexus-tomcat/nexus1.PNG)
 
+ " ArifactID   and version name will be avaliable in pom.xml please check and update same "
+
 ![Watch the image](/aws/git-maven-sonar-nexus-tomcat/nexusrepo.PNG)
 
 ![Watch the image](/aws/git-maven-sonar-nexus-tomcat/nexus3.PNG)
+
+
 
 ![Watch the image](/aws/git-maven-sonar-nexus-tomcat/nexus4.PNG)

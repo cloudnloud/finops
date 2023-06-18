@@ -1,3 +1,5 @@
+![Watch the image](/aws/git-maven-sonar-nexus-tomcat/Architecture.png)
+
 # Steps 
 # step 1: Get the git project
   Get the maven project git location : https://github.com/sree1786/maven-web-app.git

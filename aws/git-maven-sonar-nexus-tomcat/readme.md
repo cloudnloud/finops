@@ -205,10 +205,8 @@
 
 ![Watch the image](/aws/git-maven-sonar-nexus-tomcat/nexus1.PNG)
 
-![Watch the image](/aws/git-maven-sonar-nexus-tomcat/nexus2.PNG)
+![Watch the image](/aws/git-maven-sonar-nexus-tomcat/nexusrepo.PNG)
 
 ![Watch the image](/aws/git-maven-sonar-nexus-tomcat/nexus3.PNG)
-
-![Watch the image](/aws/git-maven-sonar-nexus-tomcat/nexusrepo.PNG)
 
 ![Watch the image](/aws/git-maven-sonar-nexus-tomcat/nexus4.PNG)

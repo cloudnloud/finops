@@ -20,5 +20,6 @@ UseCase 7 | [UseCase 7](/aws/Usecase7/Readme.md) | **Integration** | AWS codecom
 UseCase 8 | [UseCase 8](/aws/Usecase8/Readme.md) | **Deployment** | Different Tyeps of deployment
 UseCase 9 | [UseCase 9](/aws/monitor-aws/Readme.md) | **Deployment-Integration- Kubernetes** |  Monitor and deploy the application(python,docker,AWC ECR,Kubernetes)
 UseCase 10 | [UseCase 10](/aws/efk-kuber/Readme.md) | **Deployment - Kubernetes-monitoring** | kubernetes,efs,monitoring 
+UseCase 11 | [UseCase 10](/aws/git-maven-sonar-nexus-tomcat/Readme.md) | **Integration - Pipeline-deployment** | git,jenkins,maven,sonarqube,tomcat,Arifactory
 
 
